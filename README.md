@@ -32,7 +32,7 @@
 
 <h3 align="center">The Architecture of the project </h3>
 
-![architectureOfService](https://d.radikal.ru/d04/2110/6a/9445a8ec8562.png)
+![architectureOfService](https://i.ibb.co/74r5rPG/2021-10-12-23-40-55.png)
 
 [comment]: <> (<img src="https://media.giphy.com/media/7OWdOQupgCClrZb19P/giphy.gif" width="80%"></p>)
 
