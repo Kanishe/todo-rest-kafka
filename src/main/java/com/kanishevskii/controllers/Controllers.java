@@ -16,4 +16,9 @@ public class Controllers {
     public ResponseEntity<String>getGetStatus(){
         return new ResponseEntity<>("200",HttpStatus.OK);
     }
+
+    @GetMapping("/info")
+    public ResponseEntity<String>getInfo(){
+        return new ResponseEntity<>("what???",HttpStatus.OK);
+    }
 }
