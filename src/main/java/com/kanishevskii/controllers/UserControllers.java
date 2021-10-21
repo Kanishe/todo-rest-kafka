@@ -25,7 +25,7 @@ public class UserControllers {
     }
 
     @PostMapping(path = "/user/create")
-    public ResponseEntity<Integer> createUser(@RequestBody User user) {
+    public ResponseEntity<Integer> createUser(@RequestBody User user ) {
         int result = userService.createUser(user);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }

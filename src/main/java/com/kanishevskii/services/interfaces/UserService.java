@@ -15,28 +15,38 @@ public class UserService implements IUserService {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void createTableUser(){
+    @Override
+    public void createTableUser() {
         jdbcTemplate.execute("DROP TABLE IF EXISTS Users");
         jdbcTemplate.execute("CREATE TABLE Users (Id int ,Email VARCHAR(30),Password VARCHAR)");
     }
 
     @Override
     public int createUser(User user) {
-        return 0;
+        String query = "INSERT INTO Users VALUES (" + user.getId() + ",'" + user.getEmail() + "','" + user.getPassword() + "')";
+        int result = jdbcTemplate.update(query);
+        return result;
     }
 
     @Override
     public User getUser(long id) {
-        return null;
+        String query = "SELECT * FROM Users WHERE Id="+id;
+        User result =jdbcTemplate.queryForObject(query,User.class);
+        return result;
     }
 
+
     @Override
-    public int updateUser(User user) {
-        return 0;
+    public int updateUser(User updatedUser, long id) {
+        String query = "UPDATE Users SET Email='" + updatedUser.getEmail() + "', password='" + updatedUser.getPassword() + "' WHERE id=" + id;
+        int result = jdbcTemplate.update(query);
+        return result;
     }
 
     @Override
     public int deleteUser(long id) {
-        return 0;
+        String query = "DELETE FROM Users WHERE Id=" + id;
+        int result = jdbcTemplate.update(query);
+        return result;
     }
 }
